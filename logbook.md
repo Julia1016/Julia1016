@@ -34,7 +34,7 @@ Learn how to use circuit tools to make small bulbs light up. You can use series 
 
 ### Evidence 
 *week 2-Basic Electornic Components
-![wweek2!](/assets/week2.png/ "photos")
+![wweek2!](assets/week2.png  "photos")
 ```c 
 int code = 1; //If there is code this week, you must include evidence of it. 
 
@@ -55,6 +55,7 @@ Learn Arduino software, input the corresponding code, plug the board into the co
 ### Evidence 
 week3 Class experiment pictures and code pictures
 
+![wweek3!](assets/week3.png  "photos")
 ```c 
 int code = 1; //If there is code this week, you must include evidence of it. 
 
@@ -101,6 +102,7 @@ Part 3 – Install Required Libraries
 ### Evidence 
 week5 photos
 
+![wweek5!](assets/week5.png  "photos")
 ```c 
 int code = 1; //If there is code this week, you must include evidence of it. 
 
@@ -125,7 +127,7 @@ This week, we mainly talked about the experiment of a small wet bulb lit up by a
 
 ### Evidence 
 week6 photos
-
+![wweek6!](assets/week6.png  "photos")
 ```c 
 int code = 1; //If there is code this week, you must include evidence of it. 
 
@@ -149,6 +151,7 @@ Connect the keyboard to Arduino and enter the code to run
 ### Evidence 
 week7 photos
 
+![wweek7!](assets/week7.png  "photos")
 ```c 
 int code = 1; //If there is code this week, you must include evidence of it. 
 
@@ -222,6 +225,8 @@ Smoke sensor烟雾传感器 Use a match or lighter to approach the sensor, and t
 
 ### Evidence 
 week9nd 10 photos
+![wweek9.10!](assets/week9.10.png  "photos")
+
 
 code： int MQ2Pin=A0; float sensorValue;
 
@@ -294,7 +299,9 @@ Creating a new file is Mkdir
 Use the display screen to verify yourself according to the teacher's code
 
 ### Evidence 
-week5 photos
+week13 photos
+![wweek11!](assets/week11.png  "photos")
+
 
 ```c 
 int code = 1; //If there is code this week, you must include evidence of it. 
