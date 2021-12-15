@@ -102,6 +102,81 @@ Part 3 – Install Required Libraries
 ### Evidence 
 week5 photos
 
+code:
+const int buttonPin = 2;
+const int ledPin = 13;
+boolean b=true;
+int buttonState = 0;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(12,OUTPUT);
+pinMode(13,OUTPUT);
+pinMode(buttonPin,INPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  buttonState = digitalRead(buttonPin);
+Serial.println(buttonState);
+  if(buttonState == LOW){
+digitalWrite(12,b);
+digitalWrite(13,!b);
+delay(350);
+b=!b;
+  }
+}
+
+code:
+int MQ2Pin=A0;
+float sensorValue;
+#include <SPI.h> // 加载SPI库
+#include <Wire.h> // 加载Wire库
+#include <Adafruit_GFX.h> // 加载Adafruit_GFX库
+#include <Adafruit_SSD1306.h> // 加载Adafruit_SSD1306库
+
+// 定义 OLED屏幕的分辨率
+Adafruit_SSD1306 display = Adafruit_SSD1306(128, 64, &Wire);//设置OLED 屏幕。
+
+void setup() {
+  // put your setup code here, to run once:
+ Serial.begin(9600);
+ pinMode(12, OUTPUT);
+ pinMode(15, OUTPUT);                     
+delay(2000);
+display.begin(SSD1306_SWITCHCAPVCC, 0x3C); // 设置OLED的I2C地址
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  sensorValue = analogRead(MQ2Pin);
+Serial.print("Sensor Value:");
+Serial.println(sensorValue);
+ delay(2000);
+ 
+if(sensorValue<160){
+  digitalWrite(12,HIGH);
+  digitalWrite(15,LOW);
+}
+else {
+  digitalWrite(12,LOW);
+  digitalWrite(15,HIGH);
+}
+
+
+display.clearDisplay(); // 清空屏幕
+
+  display.setTextSize(1); // 设置字体大小
+  display.setTextColor(SSD1306_WHITE); // 设置字体颜色
+  display.setCursor(0,0); // 设置开始显示文字的坐标
+  display.print("left-sensor"); // 输出的字符
+  display.println(sensorValue);
+//   display.print("middle-sensor"); // 输出的字符
+//  display.println(sensorvalue2);
+//   display.print("right-sensor"); // 输出的字符
+//  display.println(sensorvalue3);
+  display.display(); // 使更改的显示生效
+}
 ![wweek5!](assets/week5.png  "photos")
 ```c 
 int code = 1; //If there is code this week, you must include evidence of it. 
@@ -122,10 +197,45 @@ This week, we mainly talked about the experiment of a small wet bulb lit up by a
 
 
 ## Week 6 - Sensor experimnet
-
-
-
 ### Evidence 
+code:
+int v1=11;
+int v2=10;
+int v4=9;
+void setup() {
+  // put your setup code here, to run once:
+pinMode(v1,OUTPUT);
+pinMode(v2,OUTPUT);
+pinMode(v4,OUTPUT);
+Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+multi(LOW,HIGH,LOW);//x2 no1
+int sensorvalue1=analogRead(A0);
+Serial.print("最左边的传感器:");
+Serial.println(sensorvalue1);
+delay(500);
+multi(LOW,LOW,HIGH);//x4 no2
+int sensorvalue2=analogRead(A0);
+Serial.print("中间的传感器:");
+Serial.println(sensorvalue2);
+delay(500);
+multi(LOW,HIGH,HIGH);//x6 no3
+int sensorvalue3=analogRead(A0);
+Serial.print("最右边的传感器6  6 6 6:");
+Serial.println(sensorvalue3 );
+delay(500);
+}
+
+void multi(bool x,bool y,bool z){
+  digitalWrite(v1,x);
+   digitalWrite(v2,y);
+    digitalWrite(v4,z);
+  
+  
+  }
 week6 photos
 ![wweek6!](assets/week6.png  "photos")
 ```c 
